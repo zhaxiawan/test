@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<!-- Google fonts -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+<!-- Google fonts -->
+
+<!-- css files -->
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">   
+<!-- //css files -->
+
+<link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+
+<link href="css/popup-box.css" rel="stylesheet" type="text/css" media="all" /> <!-- popup box css -->
+
+</head>
+<!-- body starts -->
+<body>
+
+<!-- section -->
+<section class="register">
+	<div class="header">
+		<div class="logo">
+			<a href="#">中航信项目</a>
+		</div>
+	<div class="social">
+			<li><a href="#"><span class="fa fa-facebook"></span></a></li>
+			<li><a href="#"><span class="fa fa-twitter"></span></a></li>
+			<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+			<li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+	</div>
+		<div class="clear"></div>
+	</div>
+
+	<div class="register-full">
+		<div class="register-left">
+			<div class="register">
+				<p>API项目简介</p>
+				<h1>安全</h1>
+				<h2>xml数据流传输</h2>
+				<p>API项目是基于ndc标准编写的，符合相关规范。xml数据传输更可靠，des加密更安全</p>
+				<div class="content3">
+				<button style="width:200px;height:50px;" onclick="test()">接口用例测试</button>
+				</div>
+			</div>
+		</div>
+		<div class="register-right">
+			<div class="register-in">
+				<a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog2">查询品牌 »</a>
+			</div>
+			<div class="register-in middle">
+				<a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">创建订单 »</a>
+			</div>
+			<div class="register-in">
+				<a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog1">留言 »</a>
+			</div>
+			<div class="clear"> </div>
+		</div>
+	<div class="clear"> </div>
+	</div>
+	<!-- copyright -->
+	<p class="agile-copyright">中航信<a target="_blank" href=""></a></p>
+	<!-- //copyright -->
+</section>
+<!-- //section -->
+
+
+
+<!-- login form popup-->
+<div class="pop-up"> 
+	<div id="small-dialog" class="mfp-hide book-form">
+
+		<div class="login-form login-form-left"> 
+			<div class="agile-row">
+					
+					<h4>创建订单请求xml</h4>
+				<textarea name="creatorderrq" style="width:350px;height:100px;"><OrderCreateRQ xmlns="http://www.iata.org/IATA/EDIST">
+	<Document/>
+	<Party>
+		<Sender>
+			<AggregatorSender>
+				<AggregatorID>ABB</AggregatorID>
+			</AggregatorSender>
+		</Sender>
+	</Party>
+	<Query>
+		<Passengers>
+			<Passenger ObjectKey="P1">
+				<PTC Quantity="1">ADT</PTC>
+				<Age>
+					<BirthDate>1966-05-23</BirthDate>
+				</Age>
+				<Name>
+					<Surname>LL</Surname>
+					<Given>MM</Given>
+				</Name>
+				<Contacts>
+					<Contact ContactType="PASSENGER">
+						<EmailContact>
+							<Address>12333@163.COM</Address>
+						</EmailContact>
+						<PhoneContact>
+							<Number AreaCode="86">18701266666</Number>
+						</PhoneContact>
+					</Contact>
+					<Contact ContactType="CONTACT">
+						<EmailContact>
+							<Address>12333@163.COM</Address>
+						</EmailContact>
+						<OtherContactMethod>
+							<Name>LI</Name>
+							<Value>Changman</Value>
+						</OtherContactMethod>
+						<PhoneContact>
+							<Number AreaCode="86">18701288888</Number>
+						</PhoneContact>
+					</Contact>
+				</Contacts>
+				<Gender>Male</Gender>
+				<PassengerIDInfo>
+					<FOID>
+						<Type>NI</Type>
+						<ID>500228196605230515</ID>
+					</FOID>
+				</PassengerIDInfo>
+			</Passenger>
+		</Passengers>
+		<OrderItems>
+			<ShoppingResponse>
+				<Owner>QK</Owner>
+				<ResponseID>SHOPPING.API.E931DAC4-C4A6-4879-B783-7F7B795D815E</ResponseID>
+				<Offers>
+					<Offer>
+						<OfferID Owner="QK">SHOPPING.API.E931DAC4-C4A6-4879-B783-7F7B795D815E.OWOFFERID.96566CFF-D366-4BD6-BC7C-2E30E1392F72</OfferID>
+						<OfferItems>
+							<OfferItem>
+								<OfferItemID Owner="QK">LHYL</OfferItemID>
+							</OfferItem>
+						</OfferItems>
+					</Offer>
+				</Offers>
+			</ShoppingResponse>
+		</OrderItems>
+	</Query>
+</OrderCreateRQ></textarea>
+				<h4>创建订单返回xml</h4>
+				<textarea name="creatorderrs" style="width:350px;height:100px;"><?xml version="1.0" encoding="UTF-8"?>
+<OrderViewRS xmlns="http://www.iata.org/IATA/EDIST">
+	<Success/>
+	<Response>
+		<Passengers>
+			<Passenger ObjectKey="P1">
+				<PTC>ADT</PTC>
+				<Age>
+					<BirthDate>1966-05-23+08:00</BirthDate>
+				</Age>
+				<Name>
+					<Surname>LL</Surname>
+					<Given>MM</Given>
+				</Name>
+				<Contacts>
+					<Contact ContactType="PASSENGER">
+						<EmailContact>
+							<Address>12333@163.COM</Address>
+						</EmailContact>
+						<PhoneContact>
+							<Number AreaCode="86">18701288888</Number>
+						</PhoneContact>
+					</Contact>
+					<Contact ContactType="CONTACT">
+						<EmailContact>
+							<Address>12333@163.COM</Address>
+						</EmailContact>
+						<OtherContactMethod>
+							<Name>LI/CHANGMAN</Name>
+							<Value/>
+						</OtherContactMethod>
+						<PhoneContact>
+							<Number AreaCode="86">18701288888</Number>
+						</PhoneContact>
+					</Contact>
+				</Contacts>
+				<Gender>Male</Gender>
+				<PassengerIDInfo>
+					<FOID>
+						<Type>NI</Type>
+						<ID>500228196605230515</ID>
+					</FOID>
+				</PassengerIDInfo>
+			</Passenger>
+		</Passengers>
+		<Order>
+			<OrderID>O2018010305571449155</OrderID>
+			<BookingReferences>
+				<BookingReference>
+					<ID>M004GJ</ID>
+					<AirlineID>QK</AirlineID>
+				</BookingReference>
+			</BookingReferences>
+			<TimeLimits>
+				<PaymentTimeLimit refs="0H44M59S"/>
+			</TimeLimits>
+			<OrderItems>
+				<OrderItem>
+					<OrderItemID Owner="QK">674982</OrderItemID>
+					<OtherItem>
+						<Services/>
+					</OtherItem>
+					<FlightItem>
+						<OriginDestination>
+							<Flight refs="SEG1">
+								<Departure>
+									<AirportCode>PEK</AirportCode>
+									<Date>2018-01-04+08:00</Date>
+								</Departure>
+								<Arrival>
+									<AirportCode>CAN</AirportCode>
+								</Arrival>
+								<MarketingCarrier>
+									<AirlineID>QK</AirlineID>
+									<FlightNumber OperationalSuffix="">181</FlightNumber>
+								</MarketingCarrier>
+							</Flight>
+						</OriginDestination>
+					</FlightItem>
+					<BaggageItem>
+						<Services/>
+					</BaggageItem>
+					<Associations>
+						<Passengers>
+							<PassengerReferences>P1</PassengerReferences>
+						</Passengers>
+						<IncludedService>
+							<BundleReference>674982</BundleReference>
+						</IncludedService>
+					</Associations>
+				</OrderItem>
+			</OrderItems>
+		</Order>
+		<DataLists>
+			<FlightSegmentList>
+				<FlightSegment SegmentKey="SEG1">
+					<Departure>
+						<AirportCode>PEK</AirportCode>
+						<Date>2018-01-04+08:00</Date>
+						<Time>08:00</Time>
+					</Departure>
+					<Arrival>
+						<AirportCode>CAN</AirportCode>
+						<Date>2018-01-04+08:00</Date>
+						<Time>12:00</Time>
+					</Arrival>
+					<MarketingCarrier>
+						<AirlineID>QK</AirlineID>
+						<FlightNumber OperationalSuffix="">181</FlightNumber>
+						<ResBookDesigCode>Y</ResBookDesigCode>
+					</MarketingCarrier>
+					<Equipment>
+						<AircraftCode>380</AircraftCode>
+					</Equipment>
+				</FlightSegment>
+			</FlightSegmentList>
+			<FlightList>
+				<Flight FlightKey="FLT1">
+					<SegmentReferences>SEG1</SegmentReferences>
+				</Flight>
+			</FlightList>
+			<OriginDestinationList>
+				<OriginDestination>
+					<DepartureCode>PEK</DepartureCode>
+					<ArrivalCode>CAN</ArrivalCode>
+					<FlightReferences>FLT1</FlightReferences>
+				</OriginDestination>
+			</OriginDestinationList>
+			<ServiceBundleList>
+				<ServiceBundle ListKey="674982">
+					<ItemCount>2</ItemCount>
+					<Associations>
+						<ServiceReference>20KG</ServiceReference>
+						<ServiceReference>SICK</ServiceReference>
+					</Associations>
+				</ServiceBundle>
+			</ServiceBundleList>
+			<ServiceList>
+				<Service>
+					<ServiceID>SICK</ServiceID>
+					<Name>Travel Insuarnce</Name>
+					<Encoding>
+						<Code>Y</Code>
+					</Encoding>
+					<FeeMethod>Y</FeeMethod>
+					<Descriptions>
+						<Description>
+							<Text>Enjoy your trip and don't worry we have you covered. For a little extra we give you the maximum security. If you need help we are there and pay for your medical bills if needed.</Text>
+						</Description>
+					</Descriptions>
+					<Price>
+						<Total Code="USD">0.00</Total>
+					</Price>
+					<BookingInstructions>
+						<SSRCode>SICK</SSRCode>
+					</BookingInstructions>
+				</Service>
+				<Service>
+					<ServiceID>20KG</ServiceID>
+					<Name>1 Bag (20kg)</Name>
+					<Encoding>
+						<Code>Y</Code>
+					</Encoding>
+					<FeeMethod>Y</FeeMethod>
+					<Descriptions>
+						<Description>
+							<Text>1 Bag with maximum weight of 20 kg</Text>
+						</Description>
+					</Descriptions>
+					<Price>
+						<Total Code="USD">0.00</Total>
+					</Price>
+					<BookingInstructions>
+						<SSRCode>20KG</SSRCode>
+					</BookingInstructions>
+				</Service>
+			</ServiceList>
+		</DataLists>
+	</Response>
+</OrderViewRS></textarea>
+				</div> 
+				 
+			</div>  
+		</div> 
+		
+	</div>  
+</div>
+<!-- //login form popup-->
+
+<!-- subscribe form popup-->
+<div class="pop-up"> 
+	<div id="small-dialog1" class="mfp-hide book-form">
+
+		<div class="login-form login-form-left"> 
+			<div class="agile-row">
+				<h3>留言</h3>
+				<p>留言以获得关于最新优惠、新闻和事件的通知。持续收听！</p>
+				<div class="clear"></div>
+				<div class="login-agileits-top"> 	
+					<form action="#" method="post"> 
+						<input type="text" class="name" name="name" Placeholder="姓名" required=""/>
+						<input type="email" class="email" name="email" Placeholder="邮箱" required=""/>
+						<input type="email" class="email" name="email" Placeholder="留言" required=""/>
+						<input type="submit" value="提交"> 
+					</form> 	
+				</div>
+			</div>  
+		</div> 
+		
+	</div>  
+</div>
+<!-- //subscribe form popup-->
+
+<!-- register form popup-->
+<div class="pop-up"> 
+	<div id="small-dialog2" class="mfp-hide book-form">
+	
+		<div class="login-form login-form-left"> 
+			<div class="agile-row">
+				<h4>查询品牌请求xml</h4>
+				<textarea name="shoppingrq" style="width:350px;height:100px;"><?xml version="1.0" encoding="UTF-8"?>
+<AirShoppingRQ xmlns="http://www.iata.org/IATA/EDIST" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iata.org/IATA/EDIST
+C:\Users\ZHANGJIABIN\Desktop\API\16_1SC~1\AirShoppingRQ.xsd" Version="">
+	<Document/>
+	<Party>
+		<Sender>
+			<TravelAgencySender>
+				<!--部门ID-->
+				<AgencyID>123</AgencyID>
+			</TravelAgencySender>
+		</Sender>
+	</Party>
+	<Parameters>
+		<CurrCodes>
+			<!--货币三字码-->
+			<CurrCode>CNY</CurrCode>
+		</CurrCodes>
+	</Parameters>
+	<Travelers>
+		<Traveler>
+			<AnonymousTraveler>
+				<!--PTC:旅客类型（ADT 成人） Quantity：人数-->
+				<PTC Quantity="2">ADT</PTC>
+			</AnonymousTraveler>
+		</Traveler>
+		<Traveler>
+			<AnonymousTraveler>
+				<!--PTC:旅客类型（CHD 儿童） Quantity：人数-->
+				<PTC Quantity="1">CHD</PTC>
+			</AnonymousTraveler>
+		</Traveler>
+		<Traveler>
+			<AnonymousTraveler>
+				<!--PTC:旅客类型（INF 婴儿） Quantity：人数-->
+				<PTC Quantity="1">INF</PTC>
+			</AnonymousTraveler>
+		</Traveler>
+	</Travelers>
+	<CoreQuery>
+		<OriginDestinations>
+			<!--一个OriginDestination节点为单程，两个OriginDestination节点为往返-->
+			<OriginDestination>
+				<Departure>
+					<!--AirportCode：出发地三字码  Application：如果节点存在并且值为1时，表示是城市三字码；如果节点不存在或值不为1时，表示机场三字码-->
+					<AirportCode Application="1">PEK</AirportCode>
+					<!--出发时间-->
+					<Date>2018-04-03</Date>
+				</Departure>
+				<Arrival>
+					<!--AirportCode：目的地三字码  Application：如果节点存在并且值为1时，表示是城市三字码；如果节点不存在或值不为1时，表示机场三字码-->
+					<AirportCode Application="1">CAN</AirportCode>
+				</Arrival>
+			</OriginDestination>
+			<OriginDestination>
+				<Departure>
+					<!--出发地三字码-->
+					<AirportCode>CAN</AirportCode>
+					<!--返回时间-->
+					<Date>2018-05-05</Date>
+				</Departure>
+				<Arrival>
+					<!--目的地三字码-->
+					<AirportCode>PEK</AirportCode>
+				</Arrival>
+			</OriginDestination>
+		</OriginDestinations>
+	</CoreQuery>
+</AirShoppingRQ></textarea>
+				<h4>查询品牌返回xml</h4>
+				<textarea name="shoppingrs" style="width:350px;height:100px;"><?xml version="1.0" encoding="UTF-8"?>
+<AirShoppingRS xmlns="http://www.iata.org/IATA/EDIST" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iata.org/IATA/EDIST
+C:\Users\ZHANGJIABIN\Desktop\API\16_1SC~1\AirShoppingRS.xsd" Version="">
+	<Document/>
+	<Success/>
+	<ShoppingResponseID>
+		<ResponseID>12121212121212122</ResponseID>
+	</ShoppingResponseID>
+	<OffersGroup>
+		<AirlineOffers>
+			<AirlineOffer>
+				<!--每个航班对应一个offerID-->
+				<OfferID Owner="QK">1111111111</OfferID>
+				<PricedOffer>
+					<!--每个（品牌+舱位）对应一个OfferPrice-->
+					<!--OfferItemID-->
+					<OfferPrice OfferItemID="PPOO1">
+						<RequestedDate>
+							<PriceDetail>
+								<!--BaseAmount总票价totalprice  Code货币三字码 -->
+								<BaseAmount Code="RMB">1300</BaseAmount>
+							</PriceDetail>
+							<Associations>
+								<ApplicableFlight>
+									<!--SegmentKey:航班ID-->
+									<FlightSegmentReference ref="a13432">
+										<ClassOfService>
+											<!--Code销售舱位  SeatsLeft舱位容量 -->
+											<Code SeatsLeft="8">D</Code>
+										</ClassOfService>
+									</FlightSegmentReference>
+								</ApplicableFlight>
+								<!--品牌ID-->
+								<PriceClass>
+									<PriceClassReference>PPOO1</PriceClassReference>
+								</PriceClass>
+							</Associations>
+						</RequestedDate>
+						<FareDetail>
+							<!--成人机票价格和税费结果-->
+							<FareComponent refs="ADT">
+								<PriceBreakdown>
+									<Price>
+										<!--BaseAmount销售舱位价格price  Code货币三字码 -->
+										<BaseAmount Code="RMB">400</BaseAmount>
+										<Taxes>
+											<Breakdown>
+												<Tax>
+													<!--Tax account-->
+													<Amount Code="RMB">98</Amount>
+													<!--Tax type code-->
+													<TaxCode>CN</TaxCode>
+													<!--Tax type name -->
+													<TaxType>基建费</TaxType>
+												</Tax>
+											</Breakdown>
+										</Taxes>
+									</Price>
+								</PriceBreakdown>
+								<FareRules>
+									<Penalty refs="LT10001"/>
+								</FareRules>
+							</FareComponent>
+							<!--儿童机票价格和税费结果-->
+							<FareComponent refs="CHD">
+								<PriceBreakdown>
+									<Price>
+										<!--BaseAmount销售舱位价格price  Code货币三字码 -->
+										<BaseAmount Code="RMB">440</BaseAmount>
+										<Taxes>
+											<Breakdown>
+												<Tax>
+													<!--Tax account-->
+													<Amount Code="RMB">9</Amount>
+													<!--Tax type code-->
+													<TaxCode>CN</TaxCode>
+													<!--Tax type name -->
+													<TaxType>基建费</TaxType>
+												</Tax>
+											</Breakdown>
+										</Taxes>
+									</Price>
+								</PriceBreakdown>
+								<FareRules>
+									<Penalty refs="LT10001"/>
+								</FareRules>
+							</FareComponent>
+							<!--婴儿机票价格和税费结果-->
+							<FareComponent refs="INF">
+								<PriceBreakdown>
+									<Price>
+										<!--BaseAmount销售舱位价格price  Code货币三字码 -->
+										<BaseAmount Code="RMB">440</BaseAmount>
+										<Taxes>
+											<Breakdown>
+												<Tax>
+													<!--Tax account-->
+													<Amount Code="RMB">8</Amount>
+													<!--Tax type code-->
+													<TaxCode>CN</TaxCode>
+													<!--Tax type name -->
+													<TaxType>基建费</TaxType>
+												</Tax>
+											</Breakdown>
+										</Taxes>
+									</Price>
+								</PriceBreakdown>
+								<FareRules>
+									<Penalty refs="LT10001"/>
+								</FareRules>
+							</FareComponent>
+						</FareDetail>
+					</OfferPrice>
+					<OfferPrice OfferItemID="PPOO1">
+						<RequestedDate>
+							<PriceDetail>
+								<!--BaseAmount总票价totalprice  Code货币三字码 -->
+								<BaseAmount Code="RMB">1300</BaseAmount>
+							</PriceDetail>
+							<Associations>
+								<ApplicableFlight>
+									<!--SegmentKey:航班ID-->
+									<FlightSegmentReference ref="a13432">
+										<ClassOfService>
+											<!--Code销售舱位  SeatsLeft舱位容量 -->
+											<Code SeatsLeft="8">D</Code>
+										</ClassOfService>
+									</FlightSegmentReference>
+								</ApplicableFlight>
+								<!--品牌ID-->
+								<PriceClass>
+									<PriceClassReference>PPOO1</PriceClassReference>
+								</PriceClass>
+							</Associations>
+						</RequestedDate>
+						<FareDetail>
+							<!--成人机票价格和税费结果-->
+							<FareComponent refs="ADT">
+								<PriceBreakdown>
+									<Price>
+										<!--BaseAmount销售舱位价格price  Code货币三字码 -->
+										<BaseAmount Code="RMB">400</BaseAmount>
+										<Taxes>
+											<Breakdown>
+												<Tax>
+													<!--Tax account-->
+													<Amount Code="RMB">98</Amount>
+													<!--Tax type code-->
+													<TaxCode>CN</TaxCode>
+													<!--Tax type name -->
+													<TaxType>基建费</TaxType>
+												</Tax>
+											</Breakdown>
+										</Taxes>
+									</Price>
+								</PriceBreakdown>
+								<FareRules>
+									<Penalty refs="LT10001"/>
+								</FareRules>
+							</FareComponent>
+							<!--儿童机票价格和税费结果-->
+							<FareComponent refs="CHD">
+								<PriceBreakdown>
+									<Price>
+										<!--BaseAmount销售舱位价格price  Code货币三字码 -->
+										<BaseAmount Code="RMB">440</BaseAmount>
+										<Taxes>
+											<Breakdown>
+												<Tax>
+													<!--Tax account-->
+													<Amount Code="RMB">9</Amount>
+													<!--Tax type code-->
+													<TaxCode>CN</TaxCode>
+													<!--Tax type name -->
+													<TaxType>基建费</TaxType>
+												</Tax>
+											</Breakdown>
+										</Taxes>
+									</Price>
+								</PriceBreakdown>
+								<FareRules>
+									<Penalty refs="LT10001"/>
+								</FareRules>
+							</FareComponent>
+							<!--婴儿机票价格和税费结果-->
+							<FareComponent refs="INF">
+								<PriceBreakdown>
+									<Price>
+										<!--BaseAmount销售舱位价格price  Code货币三字码 -->
+										<BaseAmount Code="RMB">440</BaseAmount>
+										<Taxes>
+											<Breakdown>
+												<Tax>
+													<!--Tax account-->
+													<Amount Code="RMB">8</Amount>
+													<!--Tax type code-->
+													<TaxCode>CN</TaxCode>
+													<!--Tax type name -->
+													<TaxType>基建费</TaxType>
+												</Tax>
+											</Breakdown>
+										</Taxes>
+									</Price>
+								</PriceBreakdown>
+								<FareRules>
+									<Penalty refs="LT10001"/>
+								</FareRules>
+							</FareComponent>
+						</FareDetail>
+					</OfferPrice>
+				</PricedOffer>
+			</AirlineOffer>
+		</AirlineOffers>
+	</OffersGroup>
+	<DataLists>
+		<!--旅客信息-->
+		<AnonymousTravelerList>
+			<!--ObjectKey用于标识旅客类型：ADT_ID 代表成人，CHD_ID 代表儿童，INF_ID 代表婴儿-->
+			<AnonymousTraveler ObjectKey="ADT">
+				<!--Quantity:旅客人数  ADT：成人-->
+				<PTC Quantity="2">ADT</PTC>
+			</AnonymousTraveler>
+			<AnonymousTraveler ObjectKey="CHD">
+				<!--Quantity:旅客人数  CHD：儿童-->
+				<PTC Quantity="1">CHD</PTC>
+			</AnonymousTraveler>
+			<AnonymousTraveler ObjectKey="INF">
+				<!--Quantity:旅客人数  INF：婴儿-->
+				<PTC Quantity="1">INF</PTC>
+			</AnonymousTraveler>
+		</AnonymousTravelerList>
+		<FlightSegmentList>
+			<!--SegmentKey:航班ID -->
+			<FlightSegment SegmentKey="a13432">
+				<Departure>
+					<!--出发机场三字码-->
+					<AirportCode>PEK</AirportCode>
+					<!--出发地日期-->
+					<Date>2017-09-09</Date>
+					<!--出发地时间-->
+					<Time>11:20</Time>
+					<!--出发地机场中文名-->
+					<AirportName>北京首都国际机场</AirportName>
+					<Terminal>
+						<!--出发航站楼-->
+						<Name>A1</Name>
+					</Terminal>
+				</Departure>
+				<Arrival>
+					<!--目的地机场三字码-->
+					<AirportCode>CAN</AirportCode>
+					<!--目的地日期-->
+					<Date>2017-09-10</Date>
+					<!--目的地时间-->
+					<Time>09:00</Time>
+					<!--出发地机场中文名-->
+					<AirportName>广州白云国际机场</AirportName>
+					<Terminal>
+						<!--目的地航站楼-->
+						<Name>A1</Name>
+					</Terminal>
+				</Arrival>
+				<MarketingCarrier>
+					<!--AirlineID：航司二字码-->
+					<AirlineID>QK</AirlineID>
+					<!--FlightNumber：航班号   OperationalSuffix：航班号后缀 -->
+					<FlightNumber OperationalSuffix="A">1318</FlightNumber>
+				</MarketingCarrier>
+				<Equipment>
+					<!--机型-->
+					<AircraftCode>320</AircraftCode>
+				</Equipment>
+				<FlightDetail>
+					<FlightDistance>
+						<!--航距-->
+						<Value>3211</Value>
+						<!--选填项 单位-->
+						<UOM/>
+					</FlightDistance>
+					<FlightDuration>
+						<!--飞行时长（分钟）-->
+						<Value>PT6H12M</Value>
+					</FlightDuration>
+					<Stops>
+						<!--经停数-->
+						<StopQuantity>1</StopQuantity>
+					</Stops>
+				</FlightDetail>
+			</FlightSegment>
+			<FlightSegment SegmentKey="a12345">
+				<Departure>
+					<!--出发机场三字码-->
+					<AirportCode>PEK</AirportCode>
+					<!--出发地日期-->
+					<Date>2017-09-09</Date>
+					<!--出发地时间-->
+					<Time>16:20</Time>
+					<!--出发地机场中文名-->
+					<AirportName>北京首都国际机场</AirportName>
+					<Terminal>
+						<!--出发航站楼-->
+						<Name>A1</Name>
+					</Terminal>
+				</Departure>
+				<Arrival>
+					<!--目的地机场三字码-->
+					<AirportCode>CAN</AirportCode>
+					<!--目的地日期-->
+					<Date>2017-09-10</Date>
+					<!--目的地时间-->
+					<Time>20:00</Time>
+					<!--出发地机场中文名-->
+					<AirportName>广州白云国际机场</AirportName>
+					<Terminal>
+						<!--目的地航站楼-->
+						<Name>A1</Name>
+					</Terminal>
+				</Arrival>
+				<MarketingCarrier>
+					<!--AirlineID：航司二字码-->
+					<AirlineID>QK</AirlineID>
+					<!--FlightNumber：航班号   OperationalSuffix：航班号后缀 -->
+					<FlightNumber>1319</FlightNumber>
+				</MarketingCarrier>
+				<Equipment>
+					<!--机型-->
+					<AircraftCode>320</AircraftCode>
+				</Equipment>
+				<FlightDetail>
+					<FlightDistance>
+						<!--航距-->
+						<Value>3211</Value>
+						<!--选填项 单位-->
+						<UOM/>
+					</FlightDistance>
+					<Stops>
+						<!--经停数-->
+						<StopQuantity>1</StopQuantity>
+					</Stops>
+				</FlightDetail>
+			</FlightSegment>
+		</FlightSegmentList>
+		<FlightList>
+			<Flight FlightKey="FLT1">
+				<SegmentReferences>a13432</SegmentReferences>
+			</Flight>
+			<Flight FlightKey="FLT2">
+				<SegmentReferences>a12345</SegmentReferences>
+			</Flight>
+		</FlightList>
+		<OriginDestinationList>
+			<OriginDestination>
+				<DepartureCode>PEK</DepartureCode>
+				<ArrivalCode>SHA</ArrivalCode>
+				<FlightReferences>FLT1</FlightReferences>
+			</OriginDestination>
+			<OriginDestination>
+				<DepartureCode>SHA</DepartureCode>
+				<ArrivalCode>PEK</ArrivalCode>
+				<FlightReferences>FLT2</FlightReferences>
+			</OriginDestination>
+		</OriginDestinationList>
+		<PenaltyList>
+			<Penalty ObjectKey="LT10001">
+				<ApplicableFeeRemarks>
+					<Remark>{
+				"changeother": "20",
+				"currencySign": "￥",
+				"currencyCode": "RMB",
+				"refundedinfo": [{
+					"time": "240",
+					"price": "10",
+					"lowerprice": "0"
+				}],
+				"status": "1",
+				"calcbase": "C",
+				"refundedother": "20",
+				"refundedflag": "1",
+				"id": "137107",
+				"rate": "2",
+				"changeflag": "1",
+				"changeotherl": "0",
+				"name": "TANG10",
+				"refundedotherl": "0",
+				"changeinfo": [{
+					"time": "240",
+					"price": "10",
+					"lowerprice": "0"
+				}]
+			}</Remark>
+				</ApplicableFeeRemarks>
+				<Details>
+					<Detail>
+						<!--类型：ADT成人退改规则； CHD儿童退改规则； INF婴儿退改规则-->
+						<Type>ADT</Type>
+					</Detail>
+				</Details>
+			</Penalty>
+		</PenaltyList>
+		<PriceClassList>
+			<!--ObjectKey：品牌ID-->
+			<PriceClass ObjectKey="PPOO1">
+				<!--品牌名称-->
+				<Name>品牌1</Name>
+				<Descriptions>
+					<!--选填项 备注-->
+					<Description>
+						<Text>qqq</Text>
+					</Description>
+				</Descriptions>
+			</PriceClass>
+		</PriceClassList>
+		<ServiceList>
+			<Service>
+				<!--辅营code-->
+				<ServiceID Owner="QK">MAY5</ServiceID>
+				<!--辅营名称-->
+				<Name>9公斤</Name>
+				<Encoding>
+					<!--typecode-->
+					<Code>XBAG</Code>
+				</Encoding>
+				<Descriptions>
+					<!--描述remark-->
+					<Description>
+						<Text>SFFFSDVCFDV</Text>
+					</Description>
+				</Descriptions>
+				<BookingInstructions>
+					<!--ssrtype-->
+					<SSRCode>XBAG</SSRCode>
+					<!--货币符号-->
+					<Text>$</Text>
+				</BookingInstructions>
+				<Associations>
+					<Offer>
+						<OfferReferences>PPOO1</OfferReferences>
+					</Offer>
+				</Associations>
+			</Service>
+		</ServiceList>
+	</DataLists>
+</AirShoppingRS>
+</textarea>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!-- //register form popup-->
+
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+
+<!--popup-js-->
+<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+ <script>
+	$(document).ready(function() {
+	$('.popup-with-zoom-anim').magnificPopup({
+		type: 'inline',
+		fixedContentPos: false,
+		fixedBgPos: true,
+		overflowY: 'auto',
+		closeBtnInside: true,
+		preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
+	});
+																	
+	});
+	
+	function test() {
+		window.open("./test.jsp");
+	}
+</script>
+<!--//popup-js-->
+
+</body>	
+<!-- //body ends -->
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/tx
+     http://www.springframework.org/schema/tx/spring-tx.xsd
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!-- 注意:需要先使用 com.travelsky.quick.web.util.NewEnvInitListener 加载server.properties -->
+
+   
+
+    <!-- 框架需求 -->
+    <bean name="SpringContextHolder" class="com.travelsky.quick.framework.spring.SpringContextHolder"
+       scope="singleton" /> 
+       
+    
+           
+   
+
+	<bean id="messageSource" class="com.travelsky.quick.spring.msgsrc.ReloadableResourceBundleMessageSource">
+        <property name="basename">
+            <!-- 定义消息资源文件的相对路径 -->
+            <value>file:${res-api.conf}/message</value>
+        </property>
+        <property name="cacheSeconds" value="60" />
+    </bean>
+    <bean id="msgkeyMapReloadableSource"
+       class="com.travelsky.quick.spring.msgsrc.ReloadableResourceBundleMessageSource">
+       	 <property name="basename">
+	       	<value>file:${res-api.conf}/msgkeyMap</value>
+	  	</property>
+	    <!-- 刷新资源文件的周期，以秒为单位 -->
+   		<property name="cacheSeconds" value="60"/>
+    </bean>
+    
+    <!-- 自动扫描dao和service包(自动注入) -->
+    <context:annotation-config />
+    <context:component-scan base-package="com.travelsky.quick.controller" />
+    <context:component-scan base-package="com.travelsky.quick.business" />
+    <context:component-scan base-package="com.travelsky.quick.service" />
+    <context:component-scan base-package="com.travelsky.quick.util.validate" />  
+      
+    <!-- aws 生产环境 -->     
+    <beans profile="aws">
+        <!-- 加载配置文件 -->
+        <bean id="configProperties"
+            class="org.springframework.beans.factory.config.PropertiesFactoryBean" >
+            <property name="locations">
+                <list>
+                    <!-- 全局配置目录 -->
+                    <value>file:${quick.server.conf:/opt/setting/quick}/global.aws.properties</value>
+                    <value>file:${res-api.conf}/api.aws.properties</value>
+                </list>
+            </property>
+        </bean>
+      
+    </beans>
+
+    
+    
+    <!-- 开发环境 多个开发环境不再通过 profile区分,而是quick.dev.user区分 -->
+    <beans profile="dev">
+        <!-- 加载配置文件 -->
+        <bean id="configProperties"
+            class="org.springframework.beans.factory.config.PropertiesFactoryBean"  >
+            <property name="locations">
+                <list>
+                    <value>file:${quick.server.conf:/opt/setting/quick}/global.${quick.dev.env:dev}.properties</value>
+                    <value>file:${res-api.conf}/api.dev.properties</value> 
+                    <value>file:${res-api.conf}/api.${quick.dev.env:dev}.properties</value> 
+                </list>
+            </property>
+            <property name="ignoreResourceNotFound" value="true"/>
+        </bean>
+ 	    <bean id="messageSource" class="com.travelsky.quick.spring.msgsrc.ReloadableResourceBundleMessageSource">
+	        <property name="basename">
+	            <!-- 定义消息资源文件的相对路径 -->
+	            <value>file:${res-api.conf}/message</value>
+	        </property>
+	        <property name="cacheSeconds" value="60" />
+	    </bean> 
+	    <bean id="msgkeyMapReloadableSource"
+      		 class="com.travelsky.quick.spring.msgsrc.ReloadableResourceBundleMessageSource">
+       	 	<property name="basename">
+	       		<value>file:${res-api.conf}/msgkeyMap</value>
+	  		</property>
+	    <!-- 刷新资源文件的周期，以秒为单位 -->
+   		<property name="cacheSeconds" value="60"/>
+    </bean>               
+        
+    </beans>
+</beans>

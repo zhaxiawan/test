@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="com.travelsky.quick.log.log4j2.plugins">
+	<Properties>
+		<Property name="default.pattern"><![CDATA[[%level{length=4}] [%d] [%c] | %m%n]]></Property>
+		<Property name="tam.key"><![CDATA[.*(TAM_COMMON).*]]></Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>${default.pattern}</Pattern>
+			</PatternLayout>
+		</Console>
+
+		<TAMFile name="TAM-ERR"
+			filePattern="/opt/applog/quick/res-api-172_30_19_33.%d{yyyyMMdd}.tam.log">
+			<PatternLayout>
+				<Pattern>%m%n</Pattern>
+			</PatternLayout>
+			<filters>
+				<LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="NEUTRAL" onMismatch="DENY" />
+				<!-- <MarkerFilter marker="TAM" onMatch="ACCEPT"
+					onMismatch="NEUTRAL" /> -->
+				<RegexFilter regex="${tam.key}" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</filters>
+			<Policies>
+				 <TimeBasedTriggeringPolicy modulate="true"/>
+			</Policies>
+			<TAMRolloverStrategy />
+		</TAMFile>
+		
+		<TAMFile name="ERR"
+			filePattern="/opt/applog/quick/res-api-%d{yyyyMMdd}-error.log">
+			<PatternLayout>
+				<Pattern>${default.pattern}</Pattern>
+			</PatternLayout>
+			<filters>
+				<LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="NEUTRAL" onMismatch="DENY" />
+				<!-- <MarkerFilter marker="TAM" onMatch="ACCEPT"
+					onMismatch="NEUTRAL" /> -->
+				<RegexFilter regex=".*(\\[\\#\\%\\&amp;\\*\\^\\]).*" onMatch="DENY"
+					onMismatch="ACCEPT" />
+			</filters>
+			<Policies>
+				 <TimeBasedTriggeringPolicy modulate="true"/>
+			</Policies>
+			<TAMRolloverStrategy />
+		</TAMFile>
+		
+		<TAMFile name="INF"
+			filePattern="/DATA/opt/applog/quick/res-api-%d{yyyyMMdd}-info.log">
+			<PatternLayout>
+				<Pattern>${default.pattern}</Pattern>
+			</PatternLayout>
+			<filters>
+				<LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="NEUTRAL" onMismatch="DENY" />
+				<!-- <MarkerFilter marker="TAM" onMatch="ACCEPT"
+					onMismatch="NEUTRAL" /> -->
+				<RegexFilter regex=".*(\\[\\#\\%\\&amp;\\*\\^\\]).*" onMatch="DENY"
+					onMismatch="ACCEPT" />
+			</filters>
+			<Policies>
+				 <TimeBasedTriggeringPolicy modulate="true"/>
+			</Policies>
+			<TAMRolloverStrategy />
+		</TAMFile>
+	</Appenders>
+
+	<Loggers>
+		<root level="INFO">
+			<AppenderRef ref="TAM-ERR" />
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="ERR" />
+			<AppenderRef ref="INF" />
+		</root>
+	</Loggers>
+</Configuration>
